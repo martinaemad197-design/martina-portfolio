@@ -78,10 +78,12 @@ EXPERIENCE = [
 #  Helpers
 # ------------------------------------------------------------------ #
 def img_b64(rel_path: str) -> str:
-    path = BASE / rel_path
-    if not path.exists():
-        return ""
-    return base64.b64encode(path.read_bytes()).decode()
+    # looks in assets/ first, then next to app.py
+    name = Path(rel_path).name
+    for path in (BASE / rel_path, BASE / name):
+        if path.exists():
+            return base64.b64encode(path.read_bytes()).decode()
+    return ""
 
 
 def html(block: str):
