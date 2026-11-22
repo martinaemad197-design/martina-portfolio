@@ -167,6 +167,20 @@ html{ scroll-behavior:smooth; }
 .grad{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .hero h2{ font-size:1.7rem; font-weight:500; color:#e6e7f2; margin:18px 0 14px 0; }
 .hero p{ color:var(--muted); font-size:1.15rem; line-height:1.7; max-width:560px; }
+.hero-avatar {
+width: 280px;
+height: 280px;
+border-radius: 50%;
+border: 4px solid var(--cyan);
+box-shadow: 0 0 30px var(--cyan);
+overflow: hidden;
+flex-shrink: 0;
+}
+.hero-avatar img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
 .btns{ display:flex; flex-wrap:wrap; gap:16px; margin-top:30px; }
 .btn{
   padding:16px 30px; border-radius:999px; font-weight:600; text-decoration:none !important;
