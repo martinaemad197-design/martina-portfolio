@@ -306,8 +306,8 @@ html(f"""
 # ------------------------------------------------------------------ #
 #  Hero
 # ------------------------------------------------------------------ #
-photo = img_b64("assets/profile.jpg")
-photo_html = f'<img src="data:image/jpeg;base64,{photo}" class="profile-pic"'
+with open("assets/profile.jpg", "rb") as f:
+photo = base64.b64encode(f.read()).decode()10:55 AM
 
 html(f"""
 <div class="hero">
@@ -322,7 +322,7 @@ html(f"""
       <a class="btn btn-ghost" href="#projects">View Projects</a>
     </div>
   </div>
-  <div class="photo-wrap"><div class="photo"><div>{photo_html}</div></div></div>
+<div class="photo-wrap"><div class="photo"><img src="data:image/jpeg;base64,{photo}"></div></div>
 </div>
 """)
 
