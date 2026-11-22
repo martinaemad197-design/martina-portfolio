@@ -16,11 +16,13 @@ st.set_page_config(
 BASE = Path(__file__).parent
 NAME_FIRST = "Martina"
 NAME_LAST = "Emad"
+st.markdown("""
+""", unsafe_allow_html=True)
 col1, col2 = st.columns([1, 3])
 with col1:
     image_path = BASE / "profile.jpg"
     image = Image.open(image_path)
-    st.image(image, width=200)
+    st.markdown(f'<img src="data:image/png;base64,{image_path.read_bytes().hex()}" class="circular-img">', unsafe_allow_html=True)
 with col2:
     st.title(f"{NAME_FIRST.title()} {NAME_LAST.title()}")
     st.subheader("Data Engineer")
