@@ -293,7 +293,7 @@ html(f"""
 #  Hero
 # ------------------------------------------------------------------ #
 photo = img_b64("assets/profile.jpg")
-photo_html = f'<img src="data:image/jpeg;base64,{photo}" alt="Martina Emad">' if photo else ""
+photo_html = f'<img src="data:image/jpeg;base64,{photo}" class="profile-pic"'
 
 html(f"""
 <div class="hero">
