@@ -307,7 +307,7 @@ html(f"""
 #  Hero
 # ------------------------------------------------------------------ #
 with open("assets/profile.jpg", "rb") as f:
-photo = base64.b64encode(f.read()).decode()
+    photo = base64.b64encode(f.read()).decode()
 
 html(f"""
 <div class="hero">
