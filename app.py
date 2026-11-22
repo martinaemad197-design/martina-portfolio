@@ -2,7 +2,7 @@ import base64
 from pathlib import Path
 
 import streamlit as st
-
+from PIL import Image
 # ------------------------------------------------------------------ #
 #  Page config
 # ------------------------------------------------------------------ #
@@ -14,7 +14,15 @@ st.set_page_config(
 )
 
 BASE = Path(__file__).parent
-
+col1, col2 = st.columns([1, 3])
+with col1:
+image_path = BASE / "profile.jpg"
+image = Image.open(image_path)
+st.image(image, width=200)
+with col2:
+st.title(f"{NAME_FIRST.title()} {NAME_LAST.title()}")
+st.subheader("Data Engineer")
+st.write("---")
 # ------------------------------------------------------------------ #
 #  Content (edit everything here)
 # ------------------------------------------------------------------ #
