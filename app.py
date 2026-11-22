@@ -14,6 +14,8 @@ st.set_page_config(
 )
 
 BASE = Path(__file__).parent
+NAME_FIRST = "Martina"
+NAME_LAST = "Emad"
 col1, col2 = st.columns([1, 3])
 with col1:
     image_path = BASE / "profile.jpg"
